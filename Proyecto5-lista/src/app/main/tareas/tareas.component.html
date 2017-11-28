@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header">
+    <h3>Tareas</h3>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <label for="tarea">Escribe una tarea</label><!-- for apunta al valor de id siempre-->
+      <input type="text" [(ngModel)]="sTarea"
+        class="form-control" name="" id="tarea" placeholder="Escribe una tarea">
+    </div>
+  </div>
+  <button class="btn btn-primary" (click)="addTareas()">
+    Añadir
+  </button>
+
+  <div class="card-footer text-muted">
+    <ul>
+      <li *ngFor="let tarea of aTareas">
+        {{tarea}}
+      </li>
+    </ul>
+  </div>
+</div>
