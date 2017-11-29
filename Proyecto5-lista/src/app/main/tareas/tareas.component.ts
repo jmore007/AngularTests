@@ -12,12 +12,26 @@ export class TareasComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.aTareas = [''];
+    if (localStorage.getItem('tareas')) {
+      this.aTareas = JSON.parse(localStorage.getItem('tareas'));
+    }
   }
 
   addTareas() {
     this.aTareas.push(this.sTarea);
+    this.updateStorage();
     this.sTarea = '';
+  }
+
+  delete(index: number) {
+    if (index != null) {
+      this.aTareas.splice(index, 1);
+      this.updateStorage();
+    }
+  }
+
+  private updateStorage() {
+    localStorage.setItem('tareas', JSON.stringify(this.aTareas));
   }
 
 }

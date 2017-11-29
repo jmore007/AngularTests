@@ -12,12 +12,19 @@
   <button class="btn btn-primary" (click)="addTareas()">
     Añadir
   </button>
-
-  <div class="card-footer text-muted">
-    <ul>
-      <li *ngFor="let tarea of aTareas">
-        {{tarea}}
-      </li>
+  <div class="card-footer text-muted" *ngIf="aTareas.length; then templateLista else templateSugerencia">
+  </div> <!-- El ng-template tiene que estar fuera del div en el que se define el ngIf/then/else -->
+  <ng-template #templateLista>
+    <h4>Lista de tareas</h4>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let tarea of aTareas; let i = index ">
+        <span class="col">{{i + 1}}: {{tarea}} </span>
+        <button (click)="delete(i)" class="btn btn-sm btn-danger">Eliminar</button>
+      </li> 
     </ul>
-  </div>
+  </ng-template>
+  <ng-template #templateSugerencia>
+    <p>Anímate y añade alguna tarea</p>
+  </ng-template>
+  
 </div>

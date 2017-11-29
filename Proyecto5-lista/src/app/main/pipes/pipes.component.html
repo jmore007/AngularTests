@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-header">
+      <h4>Pipes</h4>
+    </div>
+    <div class="card-body">
+      <p>Tenemos diversas variables</p>
+    </div>
+    <div class="card-footer text-muted">
+      <p>Resultados</p>
+      <p>{{sNombre | titlecase}}</p>
+      <p>{{nPrecio | currency:'EUR'}}</p>
+      <p>{{nValor | number:'3.1-2'}}</p><!-- numbero.min-max -->
+      <p>{{dFecha | date:'fullDate'}}</p><!-- e.g.:dd-MM-yyyy -->
+      <pre>{{oDatos | json}}</pre><!-- e.g.:dd-MM-yyyy -->
+    </div>
+  </div>
