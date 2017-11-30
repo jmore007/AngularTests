@@ -10,13 +10,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule
   ],
-  declarations: [
-    MainComponent,
-    PadreComponent,
-    HijoComponent
-  ],
-  exports: [
-    MainComponent
-  ]
+  declarations: [MainComponent, PadreComponent, HijoComponent],
+  exports: [MainComponent]
 })
 export class MainModule { }

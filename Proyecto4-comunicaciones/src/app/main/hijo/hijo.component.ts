@@ -1,6 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
-import { EventEmitter } from 'events';
-// import { EventEmitter } from '@angular/core/src/event_emitter';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-hijo',
@@ -10,11 +8,11 @@ import { EventEmitter } from 'events';
 export class HijoComponent implements OnInit {
 
   @Input() sNombre: string;
-  @Output() eRespuesta: EventEmitter;
+  @Output() eRespuesta: EventEmitter<string>;
   sNuevoNombre: string;
 
   constructor() {
-    this.eRespuesta = new EventEmitter(); // En este caso debe ir en el constructor, antes de crear el arbol DOM
+    this.eRespuesta = new EventEmitter();
   }
 
   ngOnInit() {
@@ -24,5 +22,4 @@ export class HijoComponent implements OnInit {
   responder() {
     this.eRespuesta.emit(this.sNuevoNombre);
   }
-
 }

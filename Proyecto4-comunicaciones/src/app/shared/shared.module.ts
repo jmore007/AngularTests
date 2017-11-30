@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PieComponent } from './pie/pie.component';
-import { CabeceraComponent } from './cabecera/cabecera.component';
+import { CabezaComponent } from './cabeza/cabeza.component';
 import { LogoComponent } from './logo/logo.component';
 
 @NgModule({
@@ -9,12 +9,12 @@ import { LogoComponent } from './logo/logo.component';
     CommonModule
   ],
   declarations: [
-    CabeceraComponent,
+    CabezaComponent,
     PieComponent,
     LogoComponent
   ],
-  exports: [
-    CabeceraComponent,
+  exports : [
+    CabezaComponent,
     PieComponent
   ]
 })

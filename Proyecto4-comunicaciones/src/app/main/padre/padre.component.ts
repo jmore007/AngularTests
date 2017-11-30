@@ -6,9 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./padre.component.css']
 })
 export class PadreComponent implements OnInit {
-
   sNombre: string;
-
   constructor() { }
 
   ngOnInit() {
